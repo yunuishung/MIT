@@ -15,3 +15,11 @@ spidev. Open (bus, device)  - bus : SPI 버스 , 현재는 0 을 사용
 device :                    - 디바이스 번호 , 0 또는 1 이 가능
 spi.dev, close()            - SPI 디바이스와의 연결종료
 data = spidev. xfer([values])
+
+## SPI 트랜잭션 수행
+values :                           - 송신데이타
+data = spidev.readbytes(len)       - SPI디바이스에서 수신할 데이타의 바이트 수
+data = spidev.writebytes( values)  - SPI디바이스에서 송신할 데이터 values 를 송신
+mode                               - mode는 함수가 아니며 속성 ( property )
+                                   -[Clock Property][Clock Phase] (0b00=0, 0b01=1, 0b10=2, 0b11=3)
+max_speed_hz                       - 현재의 통신속도 설정 값
