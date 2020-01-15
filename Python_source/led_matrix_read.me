@@ -1,0 +1,17 @@
+
+## SPI 파이썬 제어
+sudo apt get install build essential
+sudo apt get install python dev python pip
+sudo apt get install libfreetype6 dev libjpeg dev
+git clone http://github.com/rm hull/luma.led_matrix.git
+sudo H pip install upgrade luma.led_matrix
+
+
+## Spidev SPI function Reference
+
+import spidev               -  spidev를 사용하기 위해 python spidev 모듈 import
+SpiDev object = SpiDev()    - SPI통신에 사용할 spidev objec 를 만듬 . 리턴값은 spidev objec 이며 이후 데이터 통신에 사용
+spidev. Open (bus, device)  - bus : SPI 버스 , 현재는 0 을 사용
+device :                    - 디바이스 번호 , 0 또는 1 이 가능
+spi.dev, close()            - SPI 디바이스와의 연결종료
+data = spidev. xfer([values])
